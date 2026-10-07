@@ -1,9 +1,5 @@
 package ru.eventflow.model;
 
-/**
- * Доклад для задач BR-5: у него есть длительность (для рюкзака),
- * интерес (ценность для рюкзака) и интервал времени (для расписания без пересечений).
- */
 public class ScheduleTalk implements Comparable<ScheduleTalk> {
 
     private final int id;
@@ -27,7 +23,6 @@ public class ScheduleTalk implements Comparable<ScheduleTalk> {
     public int getDurationMin() { return durationMin; }
     public int getInterest() { return interest; }
 
-    /** Естественный порядок — по времени окончания (для interval scheduling). */
     @Override public int compareTo(ScheduleTalk o) {
         return Integer.compare(this.getEndMin(), o.getEndMin());
     }
