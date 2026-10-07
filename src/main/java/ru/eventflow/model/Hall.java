@@ -1,6 +1,5 @@
 package ru.eventflow.model;
 
-/** Зал конференции. */
 public class Hall {
     private final int id;
     private final String name;
