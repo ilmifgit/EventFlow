@@ -3,10 +3,6 @@ package ru.eventflow.model;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Запись о действии организатора. Хранится в журнале (BR-1)
- * и откатывается в порядке, обратном добавлению.
- */
 public class Action {
 
     public enum Type {
