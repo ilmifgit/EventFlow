@@ -2,22 +2,10 @@ package ru.eventflow.algorithms;
 
 import java.util.Comparator;
 
-/**
- * Собственные сортировки. Запрещено использовать Arrays.sort,
- * Collections.sort, List.sort, Stream.sorted.
- * <p>
- * Все методы возвращают количество операций сравнения — это нужно
- * для демонстрации замеров производительности в BR-3.
- */
 public final class Sortings {
 
     private Sortings() { }
 
-    /**
-     * Сортировка вставками. Хороша для небольших или почти упорядоченных массивов.
-     * Сложность: O(n^2) в худшем, O(n) на почти отсортированных.
-     * @return число сравнений
-     */
     public static <T> long insertionSort(T[] a, Comparator<? super T> cmp) {
         long comparisons = 0;
         for (int i = 1; i < a.length; i++) {
@@ -37,10 +25,6 @@ public final class Sortings {
         return comparisons;
     }
 
-    /**
-     * Сортировка слиянием. Стабильная, гарантированно O(n log n).
-     * @return число сравнений
-     */
     public static <T> long mergeSort(T[] a, Comparator<? super T> cmp) {
         if (a.length < 2) return 0;
         @SuppressWarnings("unchecked")
