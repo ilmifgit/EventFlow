@@ -20,7 +20,6 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
-/** Консольное меню EventFlow — все BR-1 … BR-7. */
 public class ConsoleMenu {
 
     private final InputReader input;
@@ -69,7 +68,6 @@ public class ConsoleMenu {
         }
     }
 
-    // ============ BR-1 ============
     private void showChangeLogMenu() {
         while (true) {
             System.out.println();
@@ -110,7 +108,6 @@ public class ConsoleMenu {
         System.out.println("  Добавлено: " + changeLog.log(type, d));
     }
 
-    // ============ BR-2 ============
     private void showRegistryMenu() {
         while (true) {
             System.out.println();
@@ -143,7 +140,6 @@ public class ConsoleMenu {
         }
     }
 
-    // ============ BR-3 ============
     private void showListMenu() {
         while (true) {
             System.out.println();
@@ -215,7 +211,6 @@ public class ConsoleMenu {
         }
     }
 
-    // ============ BR-4 ============
     private void showVenueMenu() {
         while (true) {
             System.out.println();
@@ -270,7 +265,6 @@ public class ConsoleMenu {
         }
     }
 
-    // ============ BR-5 ============
     private void showScheduleMenu() {
         while (true) {
             System.out.println();
@@ -330,7 +324,6 @@ public class ConsoleMenu {
         }
     }
 
-    // ============ BR-6 ============
     private void showAnalyticsMenu() {
         while (true) {
             System.out.println();
@@ -377,8 +370,7 @@ public class ConsoleMenu {
             }
         }
     }
-
-    // ============ BR-7 ============
+    
     private void showBlocksMenu() {
         while (true) {
             System.out.println();
