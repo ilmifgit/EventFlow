@@ -2,10 +2,6 @@ package ru.eventflow.io;
 
 import java.util.Scanner;
 
-/**
- * Безопасное чтение ввода из консоли. Не падает при ошибках,
- * повторно запрашивает значение или возвращает default.
- */
 public class InputReader {
 
     private final Scanner scanner = new Scanner(System.in);
