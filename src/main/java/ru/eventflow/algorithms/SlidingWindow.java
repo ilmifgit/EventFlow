@@ -1,8 +1,5 @@
 package ru.eventflow.algorithms;
 
-/**
- * Скользящее окно фиксированной длины. Сложность O(n), O(1) доп. памяти.
- */
 public final class SlidingWindow {
 
     private SlidingWindow() { }
@@ -13,7 +10,6 @@ public final class SlidingWindow {
         public Result(int s, long v) { startIndex = s; sum = v; }
     }
 
-    /** Максимальная сумма k подряд идущих элементов. */
     public static Result maxSumK(long[] a, int k) {
         if (a == null || a.length == 0 || k <= 0 || k > a.length) return null;
         long sum = 0;
