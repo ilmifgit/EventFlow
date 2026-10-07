@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * BR-5: персональное расписание — две задачи с разными подходами.
- */
 public class ScheduleService {
 
     private final List<ScheduleTalk> talks = new ArrayList<>();
@@ -23,13 +20,12 @@ public class ScheduleService {
 
     public void loadDemo() {
         clear();
-        // Демо-набор, где жадный по отношению может проиграть DP
-        add(new ScheduleTalk(1, "Ключевой доклад",  9 * 60, 180, 100)); // 3 ч / 100
-        add(new ScheduleTalk(2, "Средний A",       11 * 60, 120,  60)); // 2 ч / 60
-        add(new ScheduleTalk(3, "Средний B",       13 * 60, 120,  55)); // 2 ч / 55
-        add(new ScheduleTalk(4, "Короткий A",      15 * 60,  60,  35)); // 1 ч / 35
-        add(new ScheduleTalk(5, "Короткий B",      16 * 60,  60,  34)); // 1 ч / 34
-        add(new ScheduleTalk(6, "Короткий C",      17 * 60,  60,  33)); // 1 ч / 33
+        add(new ScheduleTalk(1, "Ключевой доклад",  9 * 60, 180, 100));
+        add(new ScheduleTalk(2, "Средний A",       11 * 60, 120,  60)); 
+        add(new ScheduleTalk(3, "Средний B",       13 * 60, 120,  55)); 
+        add(new ScheduleTalk(4, "Короткий A",      15 * 60,  60,  35)); 
+        add(new ScheduleTalk(5, "Короткий B",      16 * 60,  60,  34)); 
+        add(new ScheduleTalk(6, "Короткий C",      17 * 60,  60,  33));
     }
 
     public void loadRandom(int n, long seed) {
