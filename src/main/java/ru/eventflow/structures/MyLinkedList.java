@@ -3,12 +3,6 @@ package ru.eventflow.structures;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * Собственный двусвязный список. Используется как основа для стека
- * (BR-1) — запрещено использовать java.util.LinkedList.
- *
- * @param <T> тип хранимых значений
- */
 public class MyLinkedList<T> implements Iterable<T> {
 
     private static class Node<T> {
