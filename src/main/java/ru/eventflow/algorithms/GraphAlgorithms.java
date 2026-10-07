@@ -13,17 +13,10 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-/**
- * Алгоритмы на графах для BR-4: BFS, DFS, поиск циклов,
- * компоненты слабой связности, Дейкстра.
- * <p>Для очереди BFS используется ArrayDeque, для Дейкстры — PriorityQueue
- * (оба разрешены условиями). Граф — собственный {@link MyGraph}.
- */
 public final class GraphAlgorithms {
 
     private GraphAlgorithms() { }
 
-    /** BFS от start. Возвращает порядок обхода. */
     public static List<Integer> bfs(MyGraph g, int start) {
         List<Integer> order = new ArrayList<>();
         if (!g.hasVertex(start)) return order;
@@ -41,7 +34,6 @@ public final class GraphAlgorithms {
         return order;
     }
 
-    /** DFS от start. Возвращает порядок обхода. */
     public static List<Integer> dfs(MyGraph g, int start) {
         List<Integer> order = new ArrayList<>();
         if (!g.hasVertex(start)) return order;
@@ -58,10 +50,6 @@ public final class GraphAlgorithms {
         }
     }
 
-    /**
-     * Обнаружение цикла в ориентированном графе.
-     * Цвета: 0 — белый, 1 — серый (в текущем пути), 2 — чёрный.
-     */
     public static boolean hasCycle(MyGraph g) {
         Map<Integer, Integer> color = new HashMap<>();
         for (int v : g.vertices()) color.put(v, 0);
@@ -82,9 +70,6 @@ public final class GraphAlgorithms {
         return false;
     }
 
-    /**
-     * Число компонент слабой связности. Все рёбра считаются неориентированными.
-     */
     public static int weakComponentCount(MyGraph g) {
         Map<Integer, List<Integer>> undirected = new HashMap<>();
         for (int v : g.vertices()) undirected.putIfAbsent(v, new ArrayList<>());
@@ -112,10 +97,6 @@ public final class GraphAlgorithms {
         return components;
     }
 
-    /**
-     * Кратчайшие расстояния от start алгоритмом Дейкстры.
-     * Веса должны быть неотрицательными.
-     */
     public static Map<Integer, Integer> dijkstra(MyGraph g, int start) {
         Map<Integer, Integer> dist = new LinkedHashMap<>();
         if (!g.hasVertex(start)) return dist;
