@@ -5,9 +5,6 @@ import ru.eventflow.algorithms.TwoPointers;
 
 import java.util.Random;
 
-/**
- * BR-6: аналитика посещаемости — окно k и пара с суммой около target.
- */
 public class AnalyticsService {
 
     private long[] perMinute = new long[0];
