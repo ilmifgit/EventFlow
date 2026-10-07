@@ -3,18 +3,12 @@ package ru.eventflow.algorithms;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/**
- * Поиск пары с суммой, ближайшей к заданной, за O(n log n).
- * Используется собственный mergeSort из {@link Sortings} — без Arrays.sort в основной логике
- * (здесь Arrays.sort оставлен только как безопасный вызов для целочисленного массива,
- * если понадобится передать уже готовый массив; основной алгоритм — два указателя).
- */
 public final class TwoPointers {
 
     private TwoPointers() { }
 
     public static class Pair {
-        public final int i, j;   // индексы в исходном массиве (0-based)
+        public final int i, j;  
         public final long sum;
         public final long diff;
         public Pair(int i, int j, long sum, long diff) {
@@ -22,16 +16,11 @@ public final class TwoPointers {
         }
     }
 
-    /**
-     * Находит пару (i, j), i != j, минимизирующую |a[i]+a[j]-target|.
-     * Работает на копии массива. Время O(n log n).
-     */
     public static Pair closestPair(long[] a, long target) {
         if (a == null || a.length < 2) return null;
         int n = a.length;
         Integer[] idx = new Integer[n];
         for (int i = 0; i < n; i++) idx[i] = i;
-        // Своя сортировка индексов по значению a[idx]
         mergeSortIdx(idx, a, 0, n - 1);
 
         int l = 0, r = n - 1;
