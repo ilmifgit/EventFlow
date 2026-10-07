@@ -2,21 +2,6 @@ package ru.eventflow.structures;
 
 import java.util.function.Consumer;
 
-/**
- * Собственное бинарное дерево поиска (BST).
- * Запрещено использовать java.util.TreeMap и java.util.TreeSet,
- * поэтому реестр (BR-2) строится на этой структуре.
- * <p>
- * Сложности:
- * <ul>
- *   <li>insert — O(log n) в среднем, O(n) в худшем (вырожденное дерево).</li>
- *   <li>search — O(log n) в среднем, O(n) в худшем.</li>
- *   <li>inOrder — O(n), выдаёт значения в порядке возрастания ключей.</li>
- * </ul>
- *
- * @param <K> тип ключа, должен быть Comparable
- * @param <V> тип значения
- */
 public class MyBinarySearchTree<K extends Comparable<K>, V> {
 
     private static class Node<K, V> {
@@ -34,7 +19,6 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
     private Node<K, V> root;
     private int size;
 
-    /** Вставка или замена значения по ключу. */
     public void insert(K key, V value) {
         root = insert(root, key, value);
     }
@@ -50,12 +34,11 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
         } else if (cmp > 0) {
             node.right = insert(node.right, key, value);
         } else {
-            node.value = value; // ключ уже есть — заменяем значение
+            node.value = value; 
         }
         return node;
     }
 
-    /** Поиск значения по ключу. Возвращает null, если ключ не найден. */
     public V search(K key) {
         Node<K, V> current = root;
         while (current != null) {
@@ -71,7 +54,6 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
         return search(key) != null;
     }
 
-    /** Симметричный обход — обходит значения в порядке возрастания ключей. */
     public void inOrder(Consumer<V> visitor) {
         inOrder(root, visitor);
     }
