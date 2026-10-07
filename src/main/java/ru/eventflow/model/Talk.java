@@ -1,15 +1,11 @@
 package ru.eventflow.model;
 
-/**
- * Доклад конференции. Используется в BR-3 (сортировка и поиск
- * по времени) и далее в BR-5, BR-6, BR-7.
- */
 public class Talk implements Comparable<Talk> {
 
     private final int id;
     private final String title;
-    private final int startMinute;   // начало доклада, минуты от начала дня
-    private final int durationMin;   // длительность в минутах
+    private final int startMinute;  
+    private final int durationMin;  
 
     public Talk(int id, String title, int startMinute, int durationMin) {
         this.id = id;
@@ -24,7 +20,6 @@ public class Talk implements Comparable<Talk> {
     public int getEndMinute() { return startMinute + durationMin; }
     public int getDurationMin() { return durationMin; }
 
-    /** Естественный порядок — по времени начала. */
     @Override
     public int compareTo(Talk other) {
         return Integer.compare(this.startMinute, other.startMinute);
