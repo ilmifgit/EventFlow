@@ -1,9 +1,5 @@
 package ru.eventflow.model;
 
-/**
- * Участник конференции. У каждого уникальный ID.
- * Используется в реестре (BR-2), построенном на собственном BST.
- */
 public class Participant {
 
     private final int id;
